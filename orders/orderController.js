@@ -6,7 +6,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var order = require('./order');
 
-router.get('/', function (req, res) {
+router.get('/', function (req, res) { 
     order.find({}, function (err, orders) {
         if (err) return res.status(500).send("There was a problem finding the data.");
         res.status(200).send({
